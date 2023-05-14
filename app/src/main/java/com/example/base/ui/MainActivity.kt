@@ -1,8 +1,10 @@
-package com.example.base
+package com.example.base.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.example.base.MainViewModel
+import com.example.base.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

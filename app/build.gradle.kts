@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.base"
-        minSdk = 21
-        targetSdk = 32
+        minSdk = 23
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -52,9 +52,12 @@ dependencies {
     implementation(Dependency.AndroidX.APP_COMPAT)
     implementation(Dependency.AndroidX.MATERIAL)
     implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
+    implementation(Dependency.AndroidX.RECYCLERVIEW)
 
     //KTX
     implementation(Dependency.KTX.CORE)
+    implementation(Dependency.KTX.ACTIVITY_KTX)
+    implementation(Dependency.KTX.FRAGMENT_KTX)
 
     // Compose
     implementation(Dependency.Compose.ACTIVITY_COMPOSE)
@@ -75,8 +78,15 @@ dependencies {
     implementation(Dependency.Retrofit.GSON_CONVERTER)
     implementation(Dependency.OkHttp.LOGGING_INTERCEPTOR)
 
+    // Glide
+    implementation(Dependency.Glide.GLIDE)
+
     // Timber
     implementation(Dependency.Timber.TIMBER)
+
+    // Etc
+    implementation(Dependency.Etc.RECYCLERVIEW_DIVIDER)
+    implementation(Dependency.Etc.TED_PERMISSION)
 
     //TEST
     testImplementation(Dependency.Test.JUNIT)

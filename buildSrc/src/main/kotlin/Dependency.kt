@@ -13,10 +13,13 @@ object Dependency {
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.5.1"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.1.4"
         const val MATERIAL = "com.google.android.material:material:1.6.1"
+        const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.2.1"
     }
 
     object KTX {
         const val CORE = "androidx.core:core-ktx:1.7.0"
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.6.0"
+        const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.5.6"
     }
 
     object Compose {
@@ -62,8 +65,17 @@ object Dependency {
         const val GSON_CONVERTER = "com.squareup.retrofit2:converter-gson:$VERSION"
     }
 
+    object Glide {
+        const val GLIDE = "com.github.bumptech.glide:glide:4.15.1"
+    }
+
     object Timber {
         const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
+    }
+
+    object Etc {
+        const val RECYCLERVIEW_DIVIDER = "com.github.fondesa:recycler-view-divider:3.6.0"
+        const val TED_PERMISSION = "io.github.ParkSangGwon:tedpermission-normal:3.3.0"
     }
 
     object Test {
