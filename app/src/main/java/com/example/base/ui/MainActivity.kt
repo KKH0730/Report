@@ -3,35 +3,35 @@ package com.example.base.ui
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.PixelFormat
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.net.toUri
 import com.example.base.MainViewModel
 import com.example.base.R
 import com.example.base.databinding.ActivityMainBinding
+import com.example.base.extensions.startActivity
 import com.example.base.ui.base.BaseBindingActivity
 import dagger.hilt.android.AndroidEntryPoint
-
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : BaseBindingActivity<ActivityMainBinding>(
     layoutResId = R.layout.activity_main
 ) {
     private val viewModel by viewModels<MainViewModel>()
-    lateinit var  overlayView: View
+    lateinit var overlayView: View
     private var dx = 0
     private var dy = 0
+    private val moveX = 0f
+    private val moveY = 0f
 
     @RequiresApi(Build.VERSION_CODES.O)
     private val overlayActivityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -83,7 +83,13 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>(
                     }
                 }
 
-                true
+                false
+            }
+
+            overlayView.setOnClickListener {
+                startActivity(MainActivity::class.java) {
+                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                }
             }
         }
     }
